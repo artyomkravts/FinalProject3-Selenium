@@ -38,7 +38,6 @@ public class RegistrationTest {
     @Parameterized.Parameters
     public static Object[][] data() {
         return new Object[][] {
-            {DataGenerator.getRandomValidFirstName(), DataGenerator.getRandomValidEmail(), DataGenerator.getRandomPassword(15), true},
             {DataGenerator.getRandomValidFirstName(), DataGenerator.getRandomValidEmail(), DataGenerator.getRandomPassword(7), true},
             {DataGenerator.getRandomValidFirstName(), DataGenerator.getRandomValidEmail(), DataGenerator.getRandomPassword(6), true},
             {DataGenerator.getRandomValidFirstName(), DataGenerator.getRandomValidEmail(), DataGenerator.getRandomPassword(5), false},

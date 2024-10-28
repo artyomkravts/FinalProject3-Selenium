@@ -21,6 +21,10 @@ public class MainPage {
         driver.findElement(LOG_IN_BUTTON).click();
     }
 
+    public void clickPersonalAccountButton() {
+        driver.findElement(PERSONAL_ACCOUNT_BUTTON).click();
+    }
+
     public boolean isBunsTabVisible() {
         WebElement bunsTab = driver.findElement(BUNS_TAB);
         return bunsTab.isDisplayed();

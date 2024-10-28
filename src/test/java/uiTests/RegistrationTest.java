@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.DataGenerator;
 import ui.pages.LoginPage;
-import ui.pages.RegistrationPage;
+import ui.pages.RegisterPage;
 
 import java.time.Duration;
 
@@ -52,7 +52,7 @@ public class RegistrationTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get(RegistrationPage.REGISTRATION_PAGE_URL);
+        driver.get(RegisterPage.REGISTRATION_PAGE_URL);
     }
     @After
     public void tearDown() {
@@ -71,13 +71,13 @@ public class RegistrationTest {
 
     @Test
     public void registrationParameterizedTest() {
-        RegistrationPage registrationPage = new RegistrationPage(driver);
+        RegisterPage registerPage = new RegisterPage(driver);
 
-        registrationPage.fillName(testName);
-        registrationPage.fillEmail(testEmail);
-        registrationPage.fillPassword(testPassword);
+        registerPage.fillName(testName);
+        registerPage.fillEmail(testEmail);
+        registerPage.fillPassword(testPassword);
 
-        registrationPage.clickRegisterButton();
+        registerPage.clickRegisterButton();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
@@ -85,8 +85,8 @@ public class RegistrationTest {
             wait.until(ExpectedConditions.urlToBe(LoginPage.LOGIN_PAGE_URL));
             Assert.assertEquals("The URL is unexpected", LoginPage.LOGIN_PAGE_URL, driver.getCurrentUrl());
         } else {
-            wait.until(ExpectedConditions.urlToBe(RegistrationPage.REGISTRATION_PAGE_URL));
-            Assert.assertEquals("The URL is unexpected", RegistrationPage.REGISTRATION_PAGE_URL, driver.getCurrentUrl());
+            wait.until(ExpectedConditions.urlToBe(RegisterPage.REGISTRATION_PAGE_URL));
+            Assert.assertEquals("The URL is unexpected", RegisterPage.REGISTRATION_PAGE_URL, driver.getCurrentUrl());
         }
 
     }

@@ -7,15 +7,13 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.DataGenerator;
+import ui.pages.ForgotPasswordPage;
 import ui.pages.LoginPage;
 import ui.pages.MainPage;
+import ui.pages.RegisterPage;
 
 import java.time.Duration;
 
@@ -61,6 +59,56 @@ public class LoginTest {
         loginPage.logIn(testEmail, testPassword);
 
         Assert.assertTrue(mainPage.isBunsTabVisible());
-
     }
+
+    @Test
+    public void loginFromMainPagePrivateAccountButtonValidCredsSuccessful() {
+        MainPage mainPage = new MainPage(driver);
+
+        driver.get(MainPage.MAIN_PAGE_URL);
+
+        mainPage.clickPersonalAccountButton();
+
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.logIn(testEmail, testPassword);
+
+        Assert.assertTrue(mainPage.isBunsTabVisible());
+    }
+
+    @Test
+    public void loginFromRegisterPageLoginButtonValidCredsSuccessful() {
+        RegisterPage registerPage = new RegisterPage(driver);
+
+        driver.get(RegisterPage.REGISTRATION_PAGE_URL);
+
+        registerPage.clickLogInButton();
+
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.logIn(testEmail, testPassword);
+
+        MainPage mainPage = new MainPage(driver);
+
+        Assert.assertTrue(mainPage.isBunsTabVisible());
+    }
+
+    @Test
+    public void loginFromForgotPasswordPageLoginButtonValidCredsSuccessful() {
+        ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);
+
+        driver.get(ForgotPasswordPage.FORGOT_PASSWORD_PAGE_URL);
+
+        forgotPasswordPage.clickLogInButton();
+
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.logIn(testEmail, testPassword);
+
+        MainPage mainPage = new MainPage(driver);
+
+        Assert.assertTrue(mainPage.isBunsTabVisible());
+    }
+
+
 }

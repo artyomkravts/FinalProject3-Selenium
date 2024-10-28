@@ -14,7 +14,7 @@ public class LoginPage {
 
     public static final By PASSWORD_FIELD = By.cssSelector("input[type=password]");
     public static final By EMAIL_FIELD = By.xpath("//input[@class=\"text input__textfield text_type_main-default\" and @type=\"text\"]");
-    public static final By LOGIN_BUTTON = By.xpath("//button[contains(text(), \"Войти\")]");
+    public static final By LOGIN_BUTTON = By.xpath("//button[contains(text(), 'Войти')]");
 
     public void logIn(String email, String password) {
         fillEmail(email);

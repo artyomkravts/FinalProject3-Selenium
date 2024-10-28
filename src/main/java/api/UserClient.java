@@ -1,13 +1,27 @@
 package api;
 
 import api.requestPOJOs.LoginUser;
+import api.requestPOJOs.RegisterUser;
 import io.qameta.allure.Step;
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
 public class UserClient {
+
+    @Step("Register user")
+    public static Response registerUser(RegisterUser user) {
+        return
+                RestAssured.given().log().all()
+                        .contentType(ContentType.JSON)
+                        .and()
+                        .body(user)
+                        .when()
+                        .post(Constants.BASE_URI + Constants.REGISTER_PATH);
+    }
+
     @Step("Log in user")
     public static Response logInUser(LoginUser loginUser) {
         return given().log().all()

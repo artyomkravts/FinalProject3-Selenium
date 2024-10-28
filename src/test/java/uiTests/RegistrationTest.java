@@ -21,7 +21,7 @@ import java.time.Duration;
 
 @RunWith(Parameterized.class)
 public class RegistrationTest {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
 
     String testName;
     String testEmail;
@@ -50,6 +50,7 @@ public class RegistrationTest {
 
     @Before
     public void setUp() {
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get(RegistrationPage.REGISTRATION_PAGE_URL);
     }

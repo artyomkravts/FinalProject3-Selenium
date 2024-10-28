@@ -39,3 +39,4 @@ build/
 
 ### OWN ###
 .idea
+**/Test.java

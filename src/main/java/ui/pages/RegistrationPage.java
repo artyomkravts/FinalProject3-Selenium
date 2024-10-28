@@ -1,4 +1,4 @@
-package pages;
+package ui.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +9,9 @@ public class RegistrationPage {
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
     }
+
+    public static final String REGISTRATION_PAGE_URL = "https://stellarburgers.nomoreparties.site/register";
+
 
     private static final By NAME_FIELD = By.xpath("(//*[@class='text input__textfield text_type_main-default'])[1]");
     private static final By EMAIL_FIELD = By.xpath("(//*[@class='text input__textfield text_type_main-default'])[2]");

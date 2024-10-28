@@ -38,11 +38,14 @@ public class RegistrationTest {
     @Parameterized.Parameters
     public static Object[][] data() {
         return new Object[][] {
+            {DataGenerator.getRandomValidFirstName(), DataGenerator.getRandomValidEmail(), DataGenerator.getRandomPassword(15), true},
             {DataGenerator.getRandomValidFirstName(), DataGenerator.getRandomValidEmail(), DataGenerator.getRandomPassword(7), true},
             {DataGenerator.getRandomValidFirstName(), DataGenerator.getRandomValidEmail(), DataGenerator.getRandomPassword(6), true},
             {DataGenerator.getRandomValidFirstName(), DataGenerator.getRandomValidEmail(), DataGenerator.getRandomPassword(5), false},
             {DataGenerator.getRandomValidFirstName(), DataGenerator.getRandomValidEmail(), DataGenerator.getRandomPassword(1), false},
             {DataGenerator.getRandomValidFirstName(), DataGenerator.getRandomValidEmail(), DataGenerator.getRandomPassword(0), false},
+            {"", DataGenerator.getRandomValidEmail(), DataGenerator.getRandomPassword(7), false},
+            {DataGenerator.getRandomValidFirstName(), "", DataGenerator.getRandomPassword(7), false},
         };
     }
 

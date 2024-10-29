@@ -1,4 +1,4 @@
-## Проект UI тестов для сайта stellarburgers
+## Проект: Автоматические тесты UI для сайта stellarburgers
 URL: https://stellarburgers.nomoreparties.site/
 
 ### Используемый стек технологий

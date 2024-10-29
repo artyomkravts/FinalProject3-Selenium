@@ -26,14 +26,14 @@ public class LoginTest {
 
     @Before
     public void setUp() {
+        driver = driverFactory.getDriver();
+
         testEmail = DataGenerator.getRandomValidEmail();
         testPassword = DataGenerator.getRandomPassword(10);
         RegisterUser user = new RegisterUser(testEmail, testPassword, DataGenerator.getRandomValidFirstName());
 
         Response response = UserClient.registerUser(user);
         accessToken = UserClient.getAccessTokenWithoutBearer(response);
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @After

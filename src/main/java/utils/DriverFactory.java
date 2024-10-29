@@ -39,17 +39,17 @@ public class DriverFactory extends ExternalResource {
                 throw new IllegalArgumentException("Unsupported browser");
         }
     }
-    public void initChrome() {
+    private void initChrome() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
-    public void initFireFox() {
+    private void initFireFox() {
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
-    public void initYandex() {
+    private void initYandex() {
         WebDriverManager.chromedriver().driverVersion(ConfigReader.getProperty("driver.version")).setup();
 
         var options = new ChromeOptions();

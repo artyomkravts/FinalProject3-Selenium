@@ -1,11 +1,27 @@
-## запуск через Maven
-### Firefox
+## Проект UI тестов для сайта stellarburgers
+URL: https://stellarburgers.nomoreparties.site/
+
+### Используемый стек технологий
+- Java
+- JUnit
+- Selenium WebDriver
+- Rest-Assured (для вспомогательных действий через API)
+- Maven
+- Allure
+- Java Faker, RandomStringUtils (генерация тестовых данных)
+- Java Properties (для удобного переключения браузеров)
+- WebDriverManager (для автоматизации управления драйверами)
+- POM (Page Object Model)
+- POJO
+
+### Как запустить через Maven
+#### Firefox
 1) В config.properties установить - browser=firefox
 2) mvn clean test
-### Chrome
+#### Chrome
 1) В config.properties установить - browser=chrome
 2) mvn clean test
-### Yandex (прости, Господи)
+#### Yandex (прости, Господи)
 1) В config.properties установить:
 - browser=yandex 
 - driver.version=  

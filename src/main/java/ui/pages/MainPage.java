@@ -13,9 +13,9 @@ public class MainPage extends BasePage{
 
     public static final String MAIN_PAGE_URL = BASE_URI;
 
-    public static final By BUNS_TAB = By.xpath("//span[contains(text(), \"Булки\")]");
-    public static final By LOG_IN_BUTTON = By.xpath("//button[contains(text(), 'Войти в аккаунт')]");
-    public static final By PERSONAL_ACCOUNT_BUTTON = By.xpath("//p[text()='Личный Кабинет']");
+    public static final By BUNS_TAB = By.xpath(".//span[contains(text(), \"Булки\")]");
+    public static final By LOG_IN_BUTTON = By.xpath(".//button[contains(text(), 'Войти в аккаунт')]");
+    public static final By PERSONAL_ACCOUNT_BUTTON = By.cssSelector("a.AppHeader_header__link__3D_hX[href='/account']");
 
     public void clickLogInButton() {
         driver.findElement(LOG_IN_BUTTON).click();

@@ -12,7 +12,7 @@ public class ForgotPasswordPage extends BasePage{
 
     public static final String FORGOT_PASSWORD_PAGE_URL = BASE_URI + "/forgot-password";
 
-    private static final By LOG_IN_BUTTON = By.cssSelector("a[href=\"/login\"]");
+    public static final By LOG_IN_BUTTON = By.cssSelector("a[href=\"/login\"]");
 
     public void clickLogInButton() {
         driver.findElement(LOG_IN_BUTTON).click();

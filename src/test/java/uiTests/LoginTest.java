@@ -6,43 +6,10 @@ import io.restassured.response.Response;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import ui.DataGenerator;
+import ui.pages.*;
 import utils.DriverFactory;
-import ui.pages.ForgotPasswordPage;
-import ui.pages.LoginPage;
-import ui.pages.MainPage;
-import ui.pages.RegisterPage;
 
-import java.time.Duration;
-
-public class LoginTest {
-    @Rule
-    public DriverFactory driverFactory = new DriverFactory();
-
-    WebDriver driver;
-
-    String testEmail;
-    String testPassword;
-    String accessToken;
-
-    @Before
-    public void setUp() {
-        driver = driverFactory.getDriver();
-
-        testEmail = DataGenerator.getRandomValidEmail();
-        testPassword = DataGenerator.getRandomPassword(10);
-        RegisterUser user = new RegisterUser(testEmail, testPassword, DataGenerator.getRandomValidFirstName());
-
-        Response response = UserClient.registerUser(user);
-        accessToken = UserClient.getAccessTokenWithoutBearer(response);
-    }
-
-    @After
-    public void tearDown() {
-        if (accessToken != null) {
-            UserClient.deleteUser(accessToken);
-        }
-    }
-
+public class LoginTest extends BaseTest {
     @Test
     public void loginFromMainPageLoginButtonValidCredsSuccessful() {
         MainPage mainPage = new MainPage(driver);
@@ -53,7 +20,7 @@ public class LoginTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.logIn(testEmail, testPassword);
+        loginPage.logIn(email, password);
 
         Assert.assertTrue(mainPage.isBunsTabVisible());
     }
@@ -68,7 +35,7 @@ public class LoginTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.logIn(testEmail, testPassword);
+        loginPage.logIn(email, password);
 
         Assert.assertTrue(mainPage.isBunsTabVisible());
     }
@@ -83,7 +50,7 @@ public class LoginTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.logIn(testEmail, testPassword);
+        loginPage.logIn(email, password);
 
         MainPage mainPage = new MainPage(driver);
 
@@ -100,7 +67,7 @@ public class LoginTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.logIn(testEmail, testPassword);
+        loginPage.logIn(email, password);
 
         MainPage mainPage = new MainPage(driver);
 

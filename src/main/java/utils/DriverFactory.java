@@ -1,6 +1,7 @@
-package ui;
+package utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.Getter;
 import org.junit.rules.ExternalResource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
+@Getter
 public class DriverFactory extends ExternalResource {
     private WebDriver driver;
 
@@ -22,7 +24,7 @@ public class DriverFactory extends ExternalResource {
     }
 
     public void initDriver() {
-        switch (System.getProperty("browser")) {
+        switch (ConfigReader.getProperty("browser")) {
             case "firefox":
                 startFireFox();
                 break;
@@ -44,7 +46,4 @@ public class DriverFactory extends ExternalResource {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
-    public WebDriver getDriver() {
-        return driver;
-    }
 }

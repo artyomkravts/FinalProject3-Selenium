@@ -6,7 +6,7 @@ import io.restassured.response.Response;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import ui.DataGenerator;
-import ui.DriverFactory;
+import utils.DriverFactory;
 import ui.pages.ForgotPasswordPage;
 import ui.pages.LoginPage;
 import ui.pages.MainPage;

@@ -4,14 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MainPage {
+public class MainPage extends BasePage{
     WebDriver driver;
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public static final String MAIN_PAGE_URL = "https://stellarburgers.nomoreparties.site";
+    public static final String MAIN_PAGE_URL = BASE_URI;
 
     public static final By BUNS_TAB = By.xpath("//span[contains(text(), \"Булки\")]");
     public static final By LOG_IN_BUTTON = By.xpath("//button[contains(text(), 'Войти в аккаунт')]");

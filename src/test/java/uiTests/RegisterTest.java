@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.DataGenerator;
-import ui.DriverFactory;
+import utils.DriverFactory;
 import ui.pages.LoginPage;
 import ui.pages.RegisterPage;
 
@@ -79,7 +79,6 @@ public class RegisterTest {
         registerPage.clickRegisterButton();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
         if (isTestPositive) {
             wait.until(ExpectedConditions.urlToBe(LoginPage.LOGIN_PAGE_URL));
             Assert.assertEquals("The URL is unexpected", LoginPage.LOGIN_PAGE_URL, driver.getCurrentUrl());

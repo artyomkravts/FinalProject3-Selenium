@@ -5,6 +5,7 @@ import lombok.Getter;
 import org.junit.rules.ExternalResource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
@@ -26,23 +27,35 @@ public class DriverFactory extends ExternalResource {
     public void initDriver() {
         switch (ConfigReader.getProperty("browser")) {
             case "firefox":
-                startFireFox();
+                initFireFox();
                 break;
             case "chrome":
-                startChrome();
+                initChrome();
+                break;
+            case "yandex":
+                initYandex();
                 break;
             default:
                 throw new IllegalArgumentException("Unsupported browser");
         }
     }
-    public void startChrome() {
+    public void initChrome() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
-    public void startFireFox() {
+    public void initFireFox() {
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+    }
+    public void initYandex() {
+        WebDriverManager.chromedriver().driverVersion(ConfigReader.getProperty("driver.version")).setup();
+
+        var options = new ChromeOptions();
+        options.setBinary(ConfigReader.getProperty("webdriver.yandex.exe.path"));
+
+        driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 

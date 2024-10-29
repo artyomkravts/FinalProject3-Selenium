@@ -1,6 +1,6 @@
 import ui.DataGenerator;
 
-public class DataGeneratorTest {
+public class DataGeneratorTestsr {
 
     @org.junit.Test
     public void test() {

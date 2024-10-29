@@ -3,13 +3,10 @@ package uiTests;
 import api.UserClient;
 import api.requestPOJOs.RegisterUser;
 import io.restassured.response.Response;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import ui.DataGenerator;
+import ui.DriverFactory;
 import ui.pages.ForgotPasswordPage;
 import ui.pages.LoginPage;
 import ui.pages.MainPage;
@@ -18,6 +15,9 @@ import ui.pages.RegisterPage;
 import java.time.Duration;
 
 public class LoginTest {
+    @Rule
+    public DriverFactory driverFactory = new DriverFactory();
+
     WebDriver driver;
 
     String testEmail;
@@ -26,8 +26,6 @@ public class LoginTest {
 
     @Before
     public void setUp() {
-        driver = new ChromeDriver();
-
         testEmail = DataGenerator.getRandomValidEmail();
         testPassword = DataGenerator.getRandomPassword(10);
         RegisterUser user = new RegisterUser(testEmail, testPassword, DataGenerator.getRandomValidFirstName());
@@ -43,7 +41,6 @@ public class LoginTest {
         if (accessToken != null) {
             UserClient.deleteUser(accessToken);
         }
-        driver.quit();
     }
 
     @Test

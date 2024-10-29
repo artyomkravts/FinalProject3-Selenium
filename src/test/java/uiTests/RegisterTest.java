@@ -3,32 +3,48 @@ package uiTests;
 import api.UserClient;
 import api.requestPOJOs.LoginUser;
 import io.restassured.response.Response;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.DataGenerator;
+import ui.DriverFactory;
 import ui.pages.LoginPage;
 import ui.pages.RegisterPage;
 
 import java.time.Duration;
 
 @RunWith(Parameterized.class)
-public class RegistrationTest {
-    WebDriver driver;
+public class RegisterTest {
+    @Rule
+    public DriverFactory driverFactory = new DriverFactory();
+
+    @Before
+    public void setUp() {
+    }
+
+    @After
+    public void tearDown() {
+        LoginUser loginUser = new LoginUser(testEmail, testPassword);
+
+        Response response = UserClient.logInUser(loginUser);
+
+        String accessToken = UserClient.getAccessTokenWithoutBearer(response);
+
+        if (accessToken != null) {
+            UserClient.deleteUser(accessToken);
+        }
+        // driver.quit() -- наследуется через @Rule
+    }
 
     String testName;
     String testEmail;
     String testPassword;
     boolean isTestPositive;
 
-    public RegistrationTest(String testName, String testEmail, String testPassword, boolean isTestPositive) {
+    public RegisterTest(String testName, String testEmail, String testPassword, boolean isTestPositive) {
         this.testName = testName;
         this.testEmail = testEmail;
         this.testPassword = testPassword;
@@ -48,29 +64,12 @@ public class RegistrationTest {
         };
     }
 
-    @Before
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get(RegisterPage.REGISTRATION_PAGE_URL);
-    }
-    @After
-    public void tearDown() {
-        LoginUser loginUser = new LoginUser(testEmail, testPassword);
-
-        Response response = UserClient.logInUser(loginUser);
-
-        String accessToken = UserClient.getAccessTokenWithoutBearer(response);
-
-        if (accessToken != null) {
-            UserClient.deleteUser(accessToken);
-        }
-
-        driver.quit();
-    }
-
     @Test
-    public void registrationParameterizedTest() {
+    public void registerParameterizedTest() {
+        WebDriver driver = driverFactory.getDriver();
+
+        driver.get(RegisterPage.REGISTRATION_PAGE_URL);
+
         RegisterPage registerPage = new RegisterPage(driver);
 
         registerPage.fillName(testName);

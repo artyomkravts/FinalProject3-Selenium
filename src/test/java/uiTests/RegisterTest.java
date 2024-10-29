@@ -17,10 +17,9 @@ import ui.pages.RegisterPage;
 import java.time.Duration;
 
 @RunWith(Parameterized.class)
-public class RegisterTest {
+public class RegisterTest extends BaseTest {
     @Rule
     public DriverFactory driverFactory = new DriverFactory();
-
     @Before
     public void setUp() {
     }
@@ -31,12 +30,9 @@ public class RegisterTest {
 
         Response response = UserClient.logInUser(loginUser);
 
-        String accessToken = UserClient.getAccessTokenWithoutBearer(response);
+        accessToken = UserClient.getAccessTokenWithoutBearer(response);
 
-        if (accessToken != null) {
-            UserClient.deleteUser(accessToken);
-        }
-        // driver.quit() -- наследуется через @Rule
+        super.tearDown();
     }
 
     String testName;
@@ -66,7 +62,7 @@ public class RegisterTest {
 
     @Test
     public void registerParameterizedTest() {
-        WebDriver driver = driverFactory.getDriver();
+        driver = driverFactory.getDriver();
 
         driver.get(RegisterPage.REGISTRATION_PAGE_URL);
 

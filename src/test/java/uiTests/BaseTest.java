@@ -36,6 +36,6 @@ public class BaseTest {
     public void tearDown() {
         if (accessToken != null) {
             UserClient.deleteUser(accessToken);
-        }
+        } else System.out.println("Пользователь не был удалён!");
     }
 }

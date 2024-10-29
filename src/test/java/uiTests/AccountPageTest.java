@@ -11,7 +11,7 @@ import ui.pages.MainPage;
 
 import java.time.Duration;
 
-public class AccountPageTest extends BaseTest {
+public class AccountPageTest extends BaseAuthTest {
     private AccountPage accountPage;
     @Before
     public void setUp() {

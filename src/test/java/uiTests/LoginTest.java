@@ -1,15 +1,9 @@
 package uiTests;
 
-import api.UserClient;
-import api.requestPOJOs.RegisterUser;
-import io.restassured.response.Response;
 import org.junit.*;
-import org.openqa.selenium.WebDriver;
-import ui.DataGenerator;
 import ui.pages.*;
-import utils.DriverFactory;
 
-public class LoginTest extends BaseTest {
+public class LoginTest extends BaseAuthTest {
     @Test
     public void loginFromMainPageLoginButtonValidCredsSuccessful() {
         MainPage mainPage = new MainPage(driver);

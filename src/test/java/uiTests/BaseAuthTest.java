@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import ui.DataGenerator;
 import utils.DriverFactory;
 
-public class BaseAuthTest {
+public abstract class BaseAuthTest {
     @Rule
     public DriverFactory driverFactory = new DriverFactory();
 

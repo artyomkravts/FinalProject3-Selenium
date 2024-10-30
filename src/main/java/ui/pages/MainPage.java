@@ -4,11 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MainPage extends BasePage{
-    WebDriver driver;
-
+public class MainPage extends BasePage {
     public MainPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public static final String MAIN_PAGE_URL = BASE_URI;

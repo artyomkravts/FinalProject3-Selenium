@@ -4,10 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
-    private WebDriver driver;
-
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public static final String LOGIN_PAGE_URL = BASE_URI + "/login";

@@ -4,10 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class RegisterPage extends BasePage {
-    private WebDriver driver;
-
     public RegisterPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public static final String REGISTRATION_PAGE_URL = BASE_URI + "/register";

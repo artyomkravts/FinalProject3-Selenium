@@ -4,10 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ForgotPasswordPage extends BasePage{
-    private WebDriver driver;
-
     public ForgotPasswordPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public static final String FORGOT_PASSWORD_PAGE_URL = BASE_URI + "/forgot-password";

@@ -40,3 +40,4 @@ build/
 ### OWN ###
 .idea
 **/DataGeneratorTestsr.java
+.allure

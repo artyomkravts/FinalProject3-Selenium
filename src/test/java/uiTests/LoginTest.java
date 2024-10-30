@@ -16,7 +16,7 @@ public class LoginTest extends BaseAuthTest {
 
         loginPage.logIn(email, password);
 
-        Assert.assertTrue(mainPage.isBunsTabVisible());
+        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabVisible());
     }
 
     @Test
@@ -31,7 +31,7 @@ public class LoginTest extends BaseAuthTest {
 
         loginPage.logIn(email, password);
 
-        Assert.assertTrue(mainPage.isBunsTabVisible());
+        Assert.assertTrue("Buns tab not visible on main page", mainPage.isBunsTabVisible());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class LoginTest extends BaseAuthTest {
 
         MainPage mainPage = new MainPage(driver);
 
-        Assert.assertTrue(mainPage.isBunsTabVisible());
+        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabVisible());
     }
 
     @Test
@@ -65,7 +65,7 @@ public class LoginTest extends BaseAuthTest {
 
         MainPage mainPage = new MainPage(driver);
 
-        Assert.assertTrue(mainPage.isBunsTabVisible());
+        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabVisible());
     }
 
 

@@ -34,7 +34,7 @@ public class AccountPageTest extends BaseAuthTest {
 
         MainPage mainPage = new MainPage(driver);
 
-        Assert.assertTrue(mainPage.isBunsTabVisible());
+        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabVisible());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class AccountPageTest extends BaseAuthTest {
 
         MainPage mainPage = new MainPage(driver);
 
-        Assert.assertTrue(mainPage.isBunsTabVisible());
+        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabVisible());
     }
 
     @Test
@@ -53,7 +53,7 @@ public class AccountPageTest extends BaseAuthTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlToBe(LoginPage.LOGIN_PAGE_URL));
 
-        Assert.assertEquals(LoginPage.LOGIN_PAGE_URL, driver.getCurrentUrl());
+        Assert.assertEquals("The page URL didn't switch to /login" ,LoginPage.LOGIN_PAGE_URL, driver.getCurrentUrl());
     }
 
 }

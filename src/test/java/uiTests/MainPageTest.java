@@ -23,7 +23,7 @@ public class MainPageTest extends BaseAuthTest {
         mainPage.clickPersonalAccountButton();
         AccountPage accountPage = new AccountPage(driver);
 
-        Assert.assertTrue(accountPage.isProfileTabDisplayed());
+        Assert.assertTrue("Profile tab not visible on account page", accountPage.isProfileTabDisplayed());
     }
 
     @Test

@@ -1,33 +1,40 @@
-## Проект: Автоматические тесты UI для сайта stellarburgers
+## Project: Automated UI Tests for Stellar Burgers Website
 URL: https://stellarburgers.nomoreparties.site/
 
-### Используемый стек технологий
+### Technology Stack
 - Java
 - JUnit
 - Selenium WebDriver
-- Rest-Assured (для вспомогательных действий через API)
+- Rest-Assured (for auxiliary actions via API)
 - Maven
 - Allure
-- Java Faker, RandomStringUtils (генерация тестовых данных)
-- Java Properties (для удобного переключения браузеров)
-- WebDriverManager (для автоматизации управления драйверами)
+- Java Faker, RandomStringUtils
+- Java Properties (for easy browser switching)
+- WebDriverManager (for driver management automation)
 - POM (Page Object Model)
 - Parametrization 
 - Lombok
 - POJO
 
-### Как запустить через Maven
+### Main Test Cases
+
+- Registration and Authorization 
+- Buttons' clickability
+- Transitions between pages
+- Exit
+
+### Installation and Execution
 #### Firefox
-1) В config.properties установить - browser=firefox
+1) In *config.properties*, set *browser=firefox*
 2) mvn clean test
 #### Chrome
-1) В config.properties установить - browser=chrome
+1) In *config.properties*, set *browser=chrome*
 2) mvn clean test
-#### Yandex (прости, Господи)
-1) В config.properties установить:
-- browser=yandex 
-- driver.version=  
+#### Yandex
+1) In *config.properties*, set:
+- *browser=yandex* 
+- *driver.version=*  
 *взять версию яндекса, набрав в поиске browser://version/,  
-затем по номеру версии (кроме цифр последней точки) взять версию chrome отсюда: https://googlechromelabs.github.io/chrome-for-testing/known-good-versions.json*
-- webdriver.yandex.exe.path= *путь до .exe Яндекса*
+  Find your Yandex version by searching browser://version/. Based on this version number, find the matching Chrome version here: https://googlechromelabs.github.io/chrome-for-testing/known-good-versions.json*
+- *webdriver.yandex.exe.path= <path to the Yandex .exe file>*
 2) mvn clean test

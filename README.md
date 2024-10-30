@@ -12,6 +12,8 @@ URL: https://stellarburgers.nomoreparties.site/
 - Java Properties (для удобного переключения браузеров)
 - WebDriverManager (для автоматизации управления драйверами)
 - POM (Page Object Model)
+- Parametrization 
+- Lombok
 - POJO
 
 ### Как запустить через Maven

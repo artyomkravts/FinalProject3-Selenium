@@ -30,24 +30,27 @@ public class AccountPageTest extends BaseAuthTest {
 
     @Test
     public void clickConstructorFromAccountPageSuccessful() {
+        accountPage.waitTenSecUntilDisplayed(AccountPage.CONSTRUCTOR_BUTTON);
         accountPage.clickConstructorButton();
 
         MainPage mainPage = new MainPage(driver);
 
-        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabVisible());
+        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabDisplayed());
     }
 
     @Test
     public void clickLogoFromAccountPageSuccessful() {
+        accountPage.waitTenSecUntilDisplayed(AccountPage.STELLAR_BURGERS_LOGO);
         accountPage.clickLogo();
 
         MainPage mainPage = new MainPage(driver);
 
-        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabVisible());
+        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabDisplayed());
     }
 
     @Test
     public void clickExitButtonSuccessful() {
+        accountPage.waitTenSecUntilDisplayed(AccountPage.EXIT_BUTTON);
         accountPage.clickExitButton();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

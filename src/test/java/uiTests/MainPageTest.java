@@ -1,10 +1,15 @@
 package uiTests;
 
+import io.qameta.allure.Step;
 import org.junit.*;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.pages.AccountPage;
 import ui.pages.LoginPage;
 import ui.pages.MainPage;
+
+import java.time.Duration;
 
 public class MainPageTest extends BaseAuthTest {
     private MainPage mainPage;
@@ -15,7 +20,7 @@ public class MainPageTest extends BaseAuthTest {
         mainPage = new MainPage(driver);
     }
     @Test
-    public void clickPersonalAccountFromMainPageSuccessful() {
+    public void clickPersonalAccountProfileTabDisplayed() {
         mainPage.clickPersonalAccountButton();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.logIn(email, password);
@@ -23,11 +28,13 @@ public class MainPageTest extends BaseAuthTest {
         mainPage.clickPersonalAccountButton();
         AccountPage accountPage = new AccountPage(driver);
 
+        accountPage.waitTenSecUntilDisplayed(AccountPage.PROFILE_TAB);
+
         Assert.assertTrue("Profile tab not visible on account page", accountPage.isProfileTabDisplayed());
     }
 
     @Test
-    public void clickSauceTabWorks () throws InterruptedException {
+    public void clickSauceTabWorks () {
         driver.findElement(MainPage.SAUCES_TAB).click();
 
         WebElement parent = driver.findElement(MainPage.CHOSEN_TAB);

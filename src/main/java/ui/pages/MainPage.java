@@ -1,5 +1,6 @@
 package ui.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,15 +20,18 @@ public class MainPage extends BasePage {
     public static final By LOG_IN_BUTTON = By.xpath(".//button[contains(text(), 'Войти в аккаунт')]");
     public static final By PERSONAL_ACCOUNT_BUTTON = By.cssSelector("a.AppHeader_header__link__3D_hX[href='/account']");
 
+    @Step("Click login button")
     public void clickLogInButton() {
         driver.findElement(LOG_IN_BUTTON).click();
     }
 
+    @Step("Click personal account button")
     public void clickPersonalAccountButton() {
         driver.findElement(PERSONAL_ACCOUNT_BUTTON).click();
     }
 
-    public boolean isBunsTabVisible() {
+    @Step("Check if buns tab is displayed")
+    public boolean isBunsTabDisplayed() {
         WebElement bunsTab = driver.findElement(BUNS_TAB);
         return bunsTab.isDisplayed();
     }

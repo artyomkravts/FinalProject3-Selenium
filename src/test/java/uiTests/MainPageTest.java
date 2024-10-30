@@ -1,15 +1,10 @@
 package uiTests;
 
-import io.qameta.allure.Step;
 import org.junit.*;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.pages.AccountPage;
 import ui.pages.LoginPage;
 import ui.pages.MainPage;
-
-import java.time.Duration;
 
 public class MainPageTest extends BaseAuthTest {
     private MainPage mainPage;

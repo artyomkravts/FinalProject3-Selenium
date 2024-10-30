@@ -6,14 +6,10 @@ import io.restassured.response.Response;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.DataGenerator;
 import utils.DriverFactory;
 import ui.pages.LoginPage;
 import ui.pages.RegisterPage;
-
-import java.time.Duration;
 
 @RunWith(Parameterized.class)
 public class RegisterTest extends BaseAuthTest {
@@ -63,7 +59,7 @@ public class RegisterTest extends BaseAuthTest {
     public void registerParameterizedTest() {
         driver = driverFactory.getDriver();
 
-        driver.get(RegisterPage.REGISTRATION_PAGE_URL);
+        driver.get(RegisterPage.REGISTER_PAGE_URL);
 
         RegisterPage registerPage = new RegisterPage(driver);
 
@@ -73,13 +69,13 @@ public class RegisterTest extends BaseAuthTest {
 
         registerPage.clickRegisterButton();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
         if (isTestPositive) {
-            wait.until(ExpectedConditions.urlToBe(LoginPage.LOGIN_PAGE_URL));
-            Assert.assertEquals("The URL is unexpected", LoginPage.LOGIN_PAGE_URL, driver.getCurrentUrl());
+            registerPage.waitFiveSecUntilUrlToBe(LoginPage.LOGIN_PAGE_URL);
+            registerPage.checkCurrentUrl(LoginPage.LOGIN_PAGE_URL);
         } else {
-            wait.until(ExpectedConditions.urlToBe(RegisterPage.REGISTRATION_PAGE_URL));
-            Assert.assertEquals("The URL is unexpected", RegisterPage.REGISTRATION_PAGE_URL, driver.getCurrentUrl());
+            registerPage.waitFiveSecUntilUrlToBe(RegisterPage.REGISTER_PAGE_URL);
+            registerPage.checkCurrentUrl(RegisterPage.REGISTER_PAGE_URL);
         }
 
     }

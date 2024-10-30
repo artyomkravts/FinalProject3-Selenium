@@ -1,15 +1,10 @@
 package uiTests;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.pages.AccountPage;
 import ui.pages.LoginPage;
 import ui.pages.MainPage;
-
-import java.time.Duration;
 
 public class AccountPageTest extends BaseAuthTest {
     private AccountPage accountPage;
@@ -35,7 +30,7 @@ public class AccountPageTest extends BaseAuthTest {
 
         MainPage mainPage = new MainPage(driver);
 
-        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabDisplayed());
+        MainPage.checkBunsTabIsDisplayed(mainPage);
     }
 
     @Test
@@ -45,7 +40,7 @@ public class AccountPageTest extends BaseAuthTest {
 
         MainPage mainPage = new MainPage(driver);
 
-        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabDisplayed());
+        MainPage.checkBunsTabIsDisplayed(mainPage);
     }
 
     @Test
@@ -53,10 +48,10 @@ public class AccountPageTest extends BaseAuthTest {
         accountPage.waitTenSecUntilDisplayed(AccountPage.EXIT_BUTTON);
         accountPage.clickExitButton();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.urlToBe(LoginPage.LOGIN_PAGE_URL));
+        accountPage.waitFiveSecUntilUrlToBe(LoginPage.LOGIN_PAGE_URL);
 
-        Assert.assertEquals("The page URL didn't switch to /login" ,LoginPage.LOGIN_PAGE_URL, driver.getCurrentUrl());
+        accountPage.checkCurrentUrl(LoginPage.LOGIN_PAGE_URL);
+
     }
 
 }

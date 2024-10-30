@@ -1,6 +1,7 @@
 package ui.pages;
 
 import io.qameta.allure.Step;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -33,6 +34,15 @@ public abstract class BasePage {
     public void waitTenSecUntilDisplayed(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+    @Step("Wait 5 sec until url to be")
+    public void waitFiveSecUntilUrlToBe(String url) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.urlToBe(url));
+    }
+    @Step("Check if this is current url: {url}")
+    public void checkCurrentUrl(String url) {
+        Assert.assertEquals("The URL is unexpected", url, driver.getCurrentUrl());
     }
 
 }

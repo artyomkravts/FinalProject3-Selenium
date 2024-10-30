@@ -1,10 +1,12 @@
 package uiTests;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import ui.pages.*;
 
 public class LoginTest extends BaseAuthTest {
     @Test
+    @DisplayName("Login from main page (login button) with valid creds successful")
     public void loginFromMainPageLoginButtonValidCredsSuccessful() {
         MainPage mainPage = new MainPage(driver);
 
@@ -16,11 +18,12 @@ public class LoginTest extends BaseAuthTest {
 
         loginPage.logIn(email, password);
 
-        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabDisplayed());
+        MainPage.checkBunsTabIsDisplayed(mainPage);
     }
 
     @Test
-    public void loginFromMainPagePrivateAccountButtonValidCredsSuccessful() {
+    @DisplayName("Login from main page (personal account button) with valid creds successful")
+    public void loginFromMainPagePersonalAccountButtonValidCredsSuccessful() {
         MainPage mainPage = new MainPage(driver);
 
         driver.get(MainPage.MAIN_PAGE_URL);
@@ -31,14 +34,15 @@ public class LoginTest extends BaseAuthTest {
 
         loginPage.logIn(email, password);
 
-        Assert.assertTrue("Buns tab not visible on main page", mainPage.isBunsTabDisplayed());
+        MainPage.checkBunsTabIsDisplayed(mainPage);
     }
 
     @Test
+    @DisplayName("Login from register page with valid creds successful")
     public void loginFromRegisterPageLoginButtonValidCredsSuccessful() {
         RegisterPage registerPage = new RegisterPage(driver);
 
-        driver.get(RegisterPage.REGISTRATION_PAGE_URL);
+        driver.get(RegisterPage.REGISTER_PAGE_URL);
 
         registerPage.clickLogInButton();
 
@@ -48,10 +52,11 @@ public class LoginTest extends BaseAuthTest {
 
         MainPage mainPage = new MainPage(driver);
 
-        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabDisplayed());
+        MainPage.checkBunsTabIsDisplayed(mainPage);
     }
 
     @Test
+    @DisplayName("Login from forgot password page with valid creds successful")
     public void loginFromForgotPasswordPageLoginButtonValidCredsSuccessful() {
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);
 
@@ -65,7 +70,7 @@ public class LoginTest extends BaseAuthTest {
 
         MainPage mainPage = new MainPage(driver);
 
-        Assert.assertTrue("Buns tab not visible on main page" ,mainPage.isBunsTabDisplayed());
+        MainPage.checkBunsTabIsDisplayed(mainPage);
     }
 
 

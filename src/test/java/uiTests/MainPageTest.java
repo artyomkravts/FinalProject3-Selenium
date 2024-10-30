@@ -1,5 +1,6 @@
 package uiTests;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.openqa.selenium.WebElement;
 import ui.pages.AccountPage;
@@ -15,6 +16,7 @@ public class MainPageTest extends BaseAuthTest {
         mainPage = new MainPage(driver);
     }
     @Test
+    @DisplayName("Can open personal account from main page")
     public void clickPersonalAccountProfileTabDisplayed() {
         mainPage.clickPersonalAccountButton();
         LoginPage loginPage = new LoginPage(driver);
@@ -25,32 +27,38 @@ public class MainPageTest extends BaseAuthTest {
 
         accountPage.waitTenSecUntilDisplayed(AccountPage.PROFILE_TAB);
 
-        Assert.assertTrue("Profile tab not visible on account page", accountPage.isProfileTabDisplayed());
+        AccountPage.checkProfileTabDisplayed(accountPage);
     }
 
     @Test
+    @DisplayName("Click sauce tab successful")
     public void clickSauceTabWorks () {
         driver.findElement(MainPage.SAUCES_TAB).click();
 
         WebElement parent = driver.findElement(MainPage.CHOSEN_TAB);
         WebElement child = parent.findElement(MainPage.SPAN_TAG);
-        Assert.assertEquals("The text of the span should be 'Соусы'", "Соусы", child.getText());
+        MainPage.checkChosenTabIsSauces(child);
     }
+
     @Test
+    @DisplayName("Click fillings tab successful")
     public void clickFillingsTabWorks () {
         driver.findElement(MainPage.FILLINGS_TAB).click();
 
         WebElement parent = driver.findElement(MainPage.CHOSEN_TAB);
         WebElement child = parent.findElement(MainPage.SPAN_TAG);
-        Assert.assertEquals("The text of the span should be 'Начинки'", "Начинки", child.getText());
+        MainPage.checkChosenTabIsFillings(child);
     }
+
     @Test
+    @DisplayName("Click bun tab successful")
     public void clickBunTabWorks () {
         driver.findElement(MainPage.SAUCES_TAB).click();
         driver.findElement(MainPage.BUNS_TAB).click();
 
         WebElement parent = driver.findElement(MainPage.CHOSEN_TAB);
         WebElement child = parent.findElement(MainPage.SPAN_TAG);
-        Assert.assertEquals("The text of the span should be 'Булки'", "Булки", child.getText());
+        MainPage.checkChosenTabIsBuns(child);
     }
+
 }

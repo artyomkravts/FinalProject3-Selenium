@@ -24,6 +24,11 @@ URL: https://stellarburgers.nomoreparties.site/
 - Exit
 
 ### Installation and Execution
+#### Install
+1. Clone the repository:  
+   *git clone https://github.com/artyomkravts/FinalProject3-UI.git*
+2. Navigate to the project folder:  
+   *cd <project folder name>*
 #### Firefox
 1) In *config.properties*, set *browser=firefox*
 2) mvn clean test

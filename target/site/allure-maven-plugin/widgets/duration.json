@@ -1,0 +1,181 @@
+[ {
+  "uid" : "5332ae8d79ce8724",
+  "name" : "clickConstructorFromAccountPageSuccessful",
+  "time" : {
+    "start" : 1730303935316,
+    "stop" : 1730303944770,
+    "duration" : 9454
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5ef2edf624879469",
+  "name" : "registerParameterizedTest[1]",
+  "time" : {
+    "start" : 1730304012101,
+    "stop" : 1730304019370,
+    "duration" : 7269
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b7897536c3411cb2",
+  "name" : "Click sauce tab successful",
+  "time" : {
+    "start" : 1730303988613,
+    "stop" : 1730303994169,
+    "duration" : 5556
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f061395c97124dc8",
+  "name" : "Login from register page with valid creds successful",
+  "time" : {
+    "start" : 1730303959248,
+    "stop" : 1730303965537,
+    "duration" : 6289
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1a2979607c9e02da",
+  "name" : "registerParameterizedTest[3]",
+  "time" : {
+    "start" : 1730304023500,
+    "stop" : 1730304028116,
+    "duration" : 4616
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "201210bfcd90ffd",
+  "name" : "Login from main page (login button) with valid creds successful",
+  "time" : {
+    "start" : 1730303974850,
+    "stop" : 1730303982277,
+    "duration" : 7427
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4dd3d28c5991d6",
+  "name" : "clickLogoFromAccountPageSuccessful",
+  "time" : {
+    "start" : 1730303952319,
+    "stop" : 1730303959248,
+    "duration" : 6929
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b63a6e84c60326f6",
+  "name" : "registerParameterizedTest[0]",
+  "time" : {
+    "start" : 1730304005494,
+    "stop" : 1730304012101,
+    "duration" : 6607
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e16ab814709db889",
+  "name" : "registerParameterizedTest[5]",
+  "time" : {
+    "start" : 1730304031529,
+    "stop" : 1730304036852,
+    "duration" : 5323
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "360db6d038a43223",
+  "name" : "Click fillings tab successful",
+  "time" : {
+    "start" : 1730303994169,
+    "stop" : 1730303999362,
+    "duration" : 5193
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d432b776ac48c22f",
+  "name" : "registerParameterizedTest[2]",
+  "time" : {
+    "start" : 1730304019370,
+    "stop" : 1730304023500,
+    "duration" : 4130
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7b5070b2ef57a286",
+  "name" : "registerParameterizedTest[4]",
+  "time" : {
+    "start" : 1730304028116,
+    "stop" : 1730304031529,
+    "duration" : 3413
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "dc7749b28d84061b",
+  "name" : "clickExitButtonSuccessful",
+  "time" : {
+    "start" : 1730303944952,
+    "stop" : 1730303952319,
+    "duration" : 7367
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c4342b75d74ee680",
+  "name" : "registerParameterizedTest[6]",
+  "time" : {
+    "start" : 1730304036852,
+    "stop" : 1730304040421,
+    "duration" : 3569
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f73fa26d57b82a3d",
+  "name" : "Login from main page (personal account button) with valid creds successful",
+  "time" : {
+    "start" : 1730303970113,
+    "stop" : 1730303974835,
+    "duration" : 4722
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "db1a24bc6d682555",
+  "name" : "Can open personal account from main page",
+  "time" : {
+    "start" : 1730303999362,
+    "stop" : 1730304005478,
+    "duration" : 6116
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "12bba09262c0efef",
+  "name" : "Click bun tab successful",
+  "time" : {
+    "start" : 1730303982277,
+    "stop" : 1730303988613,
+    "duration" : 6336
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1d37c17652e8c04a",
+  "name" : "Login from forgot password page with valid creds successful",
+  "time" : {
+    "start" : 1730303965537,
+    "stop" : 1730303970113,
+    "duration" : 4576
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

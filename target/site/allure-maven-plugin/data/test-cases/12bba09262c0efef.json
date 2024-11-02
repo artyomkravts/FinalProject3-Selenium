@@ -1,0 +1,138 @@
+{
+  "uid" : "12bba09262c0efef",
+  "name" : "Click bun tab successful",
+  "fullName" : "uiTests.MainPageTest.clickBunTabWorks",
+  "historyId" : "7d4574c0ae42953a295d92387689b9b1",
+  "time" : {
+    "start" : 1730303982277,
+    "stop" : 1730303988613,
+    "duration" : 6336
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Register user",
+      "time" : {
+        "start" : 1730303983061,
+        "stop" : 1730303984975,
+        "duration" : 1914
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "RegisterUser(email=алексеи.павлова@hotmail.com, password=hHwnjdAxaW, name=Антон)"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Get access token without 'Bearer ' part",
+      "time" : {
+        "start" : 1730303984975,
+        "stop" : 1730303985006,
+        "duration" : 31
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "response",
+        "value" : "io.restassured.internal.RestAssuredResponseImpl@77784a86"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Check chosen tab is buns",
+      "time" : {
+        "start" : 1730303987253,
+        "stop" : 1730303987265,
+        "duration" : 12
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "element",
+        "value" : "[[[[ChromeDriver: chrome on windows (48e50b9d2b917bdae5e139bbb3a35e10)] -> css selector: div.tab_tab_type_current__2BEPc ]] -> xpath: .//span]"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Delete user",
+      "time" : {
+        "start" : 1730303987265,
+        "stop" : 1730303988462,
+        "duration" : 1197
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "accessToken",
+        "value" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjI1N2YyOWVkMjgwMDAxYjRmZTJlMCIsImlhdCI6MTczMDMwMzk4NiwiZXhwIjoxNzMwMzA1MTg2fQ.CSNJoDju1lrysQHCH6mjS2FqhKD0qjtjGLYgtkfaIwY"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 4,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "uiTests"
+  }, {
+    "name" : "testClass",
+    "value" : "uiTests.MainPageTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "clickBunTabWorks"
+  }, {
+    "name" : "suite",
+    "value" : "uiTests.MainPageTest"
+  }, {
+    "name" : "host",
+    "value" : "Artemin"
+  }, {
+    "name" : "thread",
+    "value" : "15424@Artemin.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "12bba09262c0efef.json",
+  "parameterValues" : [ ]
+}

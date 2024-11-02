@@ -1,0 +1,240 @@
+{
+  "uid" : "201210bfcd90ffd",
+  "name" : "Login from main page (login button) with valid creds successful",
+  "fullName" : "uiTests.LoginTest.loginFromMainPageLoginButtonValidCredsSuccessful",
+  "historyId" : "272d453286705a2a0e6be87253f6f124",
+  "time" : {
+    "start" : 1730303974850,
+    "stop" : 1730303982277,
+    "duration" : 7427
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Register user",
+      "time" : {
+        "start" : 1730303975613,
+        "stop" : 1730303976140,
+        "duration" : 527
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "RegisterUser(email=денис.кириллова@mail.ru, password=vvZuKIVfzV, name=Никита)"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Get access token without 'Bearer ' part",
+      "time" : {
+        "start" : 1730303976140,
+        "stop" : 1730303976172,
+        "duration" : 32
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "response",
+        "value" : "io.restassured.internal.RestAssuredResponseImpl@716125a3"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Click login button",
+      "time" : {
+        "start" : 1730303980687,
+        "stop" : 1730303980733,
+        "duration" : 46
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Log in",
+      "time" : {
+        "start" : 1730303980733,
+        "stop" : 1730303980953,
+        "duration" : 220
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Fill email",
+        "time" : {
+          "start" : 1730303980733,
+          "stop" : 1730303980853,
+          "duration" : 120
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "email",
+          "value" : "денис.кириллова@mail.ru"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "Fill password",
+        "time" : {
+          "start" : 1730303980853,
+          "stop" : 1730303980912,
+          "duration" : 59
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "password",
+          "value" : "vvZuKIVfzV"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "Click login button",
+        "time" : {
+          "start" : 1730303980912,
+          "stop" : 1730303980953,
+          "duration" : 41
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "email",
+        "value" : "денис.кириллова@mail.ru"
+      }, {
+        "name" : "password",
+        "value" : "vvZuKIVfzV"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 3,
+      "hasContent" : true
+    }, {
+      "name" : "Check buns tab is visible on main page",
+      "time" : {
+        "start" : 1730303980953,
+        "stop" : 1730303981357,
+        "duration" : 404
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Check if buns tab is displayed",
+        "time" : {
+          "start" : 1730303980953,
+          "stop" : 1730303981357,
+          "duration" : 404
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "mainPage",
+        "value" : "ui.pages.MainPage@1b5593e6"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "Delete user",
+      "time" : {
+        "start" : 1730303981357,
+        "stop" : 1730303982114,
+        "duration" : 757
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "accessToken",
+        "value" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjI1N2U5OWVkMjgwMDAxYjRmZTJkZCIsImlhdCI6MTczMDMwMzk3NywiZXhwIjoxNzMwMzA1MTc3fQ.0r6Whtr1CyiYGdpHBxA51d3YNKD242eZwTQMRifecW8"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 10,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "uiTests"
+  }, {
+    "name" : "testClass",
+    "value" : "uiTests.LoginTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "loginFromMainPageLoginButtonValidCredsSuccessful"
+  }, {
+    "name" : "suite",
+    "value" : "uiTests.LoginTest"
+  }, {
+    "name" : "host",
+    "value" : "Artemin"
+  }, {
+    "name" : "thread",
+    "value" : "15424@Artemin.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "201210bfcd90ffd.json",
+  "parameterValues" : [ ]
+}
